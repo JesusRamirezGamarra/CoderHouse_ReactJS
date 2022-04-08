@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# BBFs - Best Friend Forever Store 
+_Titulo : Nombre del proyecto de eCommerce para el curso de Coder House ReactJS.
+
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
