@@ -1,5 +1,5 @@
 # BBFs - Best Friend Forever Store 
-_Titulo : Nombre del proyecto de eCommerce para el curso de Coder House ReactJS.
+_Titulo : Nombre del proyecto de eCommerce para el curso de Coder House ReactJS._
 
 
 
