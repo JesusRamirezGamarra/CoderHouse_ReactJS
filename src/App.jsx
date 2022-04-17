@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import NavBar from './Assets/components/NavBar'
+import BannerContainer from "./Assets/components/Banner";
 
 import logo from './images/logo.svg';
 import './css/App.css';
@@ -7,9 +8,10 @@ import './css/App.css';
 export function App() {
 
     return (
-        <Fragment>
+        <>
             <div className="App">
                 HOLA
+                <BannerContainer />
                 <NavBar />
                 {/* <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
@@ -26,6 +28,6 @@ export function App() {
                     </a>
                 </header> */}
             </div>
-        </Fragment>
+        </>
     );
 }
