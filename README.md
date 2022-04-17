@@ -1,6 +1,11 @@
 # BFFs - Best Friend Forever Store 
 _Titulo : Nombre del proyecto de eCommerce para el curso de Coder House ReactJS._
 
+## Entendiendo Atomic Design
+
+* https://www.linkedin.com/pulse/entendiendo-atomic-design-luis-moncaris/
+* https://www.linkedin.com/pulse/utilizando-atomic-design-con-react-luis-moncaris/
+
 
 ## Getting Started with Create React App
 
