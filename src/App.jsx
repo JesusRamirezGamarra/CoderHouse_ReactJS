@@ -1,17 +1,19 @@
 import React, { Fragment } from "react";
 import NavBar from './components/atoms/NavBar'
 import BannerContainer from "./components/atoms/Banner";
-
+import ItemListContainer from './components/atoms/Item/List'
 import './css/App.css';
 
 export function App() {
 
+    const greeting = 'SALUDO !!!'
     return (
         <>
             <div className="App">
                 HOLA
                 <BannerContainer />
                 <NavBar />
+                <ItemListContainer greeting={greeting}  />
                 {/* <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>
