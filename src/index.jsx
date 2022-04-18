@@ -23,18 +23,33 @@
 // // const root = createRoot(container); // createRoot(container!) if you use TypeScript
 // // root.render(<App tab="home" />);
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {App} from './App';
-ReactDOM.render(    
-    <App/>,document.getElementById('root')    
-    // App(),document.getElementById('root')    
-);
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import {App} from './App';
+// ReactDOM.render(    
+//     <App/>,document.getElementById('root')    
+//     // App(),document.getElementById('root')    
+// );
 
-
+// import React from 'react';
 // import { createRoot } from 'react-dom/client';
 // import {App} from './App';
 
 // const container = document.getElementById('app');
 // const root = createRoot(container); // createRoot(container!) if you use TypeScript
-// root.render(<App tab="home" />);
+// root.render(<App />);
+
+
+//////React V.16
+// import React from 'react';
+// import { createRoot } from 'react-dom/client';
+// import {App} from './App';
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<App  />);
+
+//////React V.18
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import {App} from './App';
+const root = createRoot(document.getElementById('root'));
+root.render(<App  />);
