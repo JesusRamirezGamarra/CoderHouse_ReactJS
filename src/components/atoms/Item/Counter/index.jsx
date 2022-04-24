@@ -1,6 +1,5 @@
 import React ,{useState} from 'react'
 import { TiShoppingCart } from 'react-icons/ti';
-// import {MdOutlineShoppingCart} from 'react-icons/fa';
 
 const ItemCounter = ({stock =0,minUnidadPorPedido=1,onAdd}) => {
     const [contador,setContador] = useState(minUnidadPorPedido)
@@ -31,6 +30,9 @@ const ItemCounter = ({stock =0,minUnidadPorPedido=1,onAdd}) => {
                 </div>
             </div>
             <button className="btn btn-outline-warning btn-lg btn-block" onClick={onAdd}> Agregar al Carrito <TiShoppingCart /></button>
+            <div className="card-footer text-muted  ">
+            <span className="align-middle" > stock disponible :   {stock-contador}     </span> 
+            </div>
         </>
     )
 }

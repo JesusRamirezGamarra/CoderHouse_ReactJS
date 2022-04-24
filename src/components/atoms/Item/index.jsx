@@ -25,7 +25,7 @@ const Item  = ({productoNombre='Sin Nombre',produtoDescripcion='Sin Descripcion'
                 <div className="card-body">         
                     <img className="card-img-top" src={card==undefined?defaultImage:card} alt={productoNombre} ></img>
                     { show && <p className="card-text">{produtoDescripcion}</p> }
-                    <button className="btn btn-dark" onClick={onMoreDetails}>ver { show ? '-': '+'} </button>
+                    <button className="btn btn-dark" onClick={onMoreDetails}>Ver detalle del producto { show ? '-': '+'} </button>
                     
                 </div>
                 <ItemCounter stock={8} minUnidadPorPedido={1} onAdd={onAdd}   />
