@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/Banner.css'
+import './SuperiorWithFunction.css'
 
 const SuperiorWithFunction = (props) => {
 let {promocionPrincipal , promocionSecundaria} = props;

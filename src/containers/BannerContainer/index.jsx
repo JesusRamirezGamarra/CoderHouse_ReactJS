@@ -1,6 +1,6 @@
 import React from 'react'
-import BannerSuperiorWithFunction from './SuperiorWithFunction'
-import BannerSuperiorWithClassBased from './SuperiorWithClassBased'
+import BannerSuperiorWithFunction from '../../components/atoms/Banner/SuperiorWithFunction'
+import BannerSuperiorWithClassBased from '../../components/atoms/Banner/SuperiorWithClassBased'
 
 const BannerContainer = () => {
 const promocionPrincipal ="50"
@@ -17,4 +17,4 @@ const promocionSecundariaExtends ="15"
     )
 }
 
-export default BannerContainer
+export {BannerContainer}

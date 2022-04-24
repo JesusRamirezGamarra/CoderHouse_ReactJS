@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import './css/Banner.css'
+import './SuperiorWithClassBased.css'
 
 class SuperiorWithClassBased extends Component {      
     render(){

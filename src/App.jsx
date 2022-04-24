@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import NavBar from './components/atoms/NavBar'
-import BannerContainer from "./components/atoms/Banner";
-import ItemListContainer from './components/atoms/Item/List'
-import './css/App.css';
+import {BannerContainer} from "./containers/BannerContainer";
+import {ItemListContainer} from './containers/ItemListContainer';
+import './App.css';
 
 export function App() {
 
