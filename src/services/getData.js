@@ -114,3 +114,5 @@ setTimeout(() => {
 }, 2000);
 });
 export {getData};
+
+
