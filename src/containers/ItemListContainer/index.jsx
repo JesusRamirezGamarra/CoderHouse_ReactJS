@@ -1,32 +1,44 @@
-import React,{useState,useEffect} from 'react'
-import {getData} from '../../services/getData'
+import React,{ useState, useEffect } from 'react'
+import { useParams } from "react-router-dom"
 
-import {ItemList} from '../../components/molecules/ItemList'
+import { Loading } from "../../components/atoms/loading"
+import { Page404 } from "../../pages/error/page404"
+import { getItems } from '../../services/getItems'
+import { ItemList } from '../../components/molecules/ItemList'
 
 
 
 const ItemListContainer = ({greeting}) => {
 
-    const [items, setProducts] = useState([]);
+    const [items, setItems] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    const { category } = useParams();
+
     console.log("Products before promise", items); // Empty
 
     useEffect(() => {
-        getData
-        .then((response) => setProducts(response))
-        .catch((error) => console.log("error: ", error));
+        getItems
+        .then((response) => setItems(response))
+        .catch((error) => console.log("error: ", error))
+        .finally(
+            setTimeout(() => {
+                setIsLoaded(true);
+            }, 800)
+        );
     }, []);
 
 
 return (
-    <>      
-        <h3>{greeting}</h3>
-        <div className="row">
-            Productos!!! ItemListContainer
-        </div>
-        <ItemList items={items} />
-    </>
-
-)
+        <>      
+            {isLoaded ? (
+                <div>
+                    <h3>{greeting}</h3>
+                    <ItemList items={items} />
+                </div>
+            ) : ( <Loading /> )}  
+        </>
+    )
 }
 
 export {ItemListContainer}

@@ -1,8 +1,10 @@
-import React,{useState} from 'react'
-import {ItemCounter} from './Counter'
+import React,{ useState } from 'react'
+import { ItemCounter } from './Counter'
 // import CurrencyFormat from 'react-currency-format';
+import { Link } from "react-router-dom";
 
 const Item  = ({
+                id,
                 image,
                 title='Sin Descripcion',
                 description='Sin Descripcion',
@@ -33,19 +35,27 @@ const Item  = ({
                 <div className="card-header">
                     <h4 className="card-title">{title}</h4>
                     <h6 className="card-title">{category}</h6>
-                    <div className="text-danger"><del><span className="card-text">{Promoprice}</span></del>
+                    <div className="text-danger"><del><span className="card-text">USD {Promoprice}</span></del>
                     </div> 
-                    <span className="card-text">{price}</span> 
+                    <span className="card-text">USD {price}</span> 
                     {/* <CurrencyFormat value={2456981} displayType={'text'}  thousandSeparator={true} prefix={'$'} /> */}
                     
                 </div>            
-                <div className="card-body">         
-                    <img className="card-img-top" src={image==undefined?defaultImage:image} alt={title} ></img>
-                    { show && <p className="card-text">{description}</p> }
+                <div className="card-body">       
+                    <Link to={`/store/detail/${id}`}>   
+                        <img className="card-img-top" src={image==undefined?defaultImage:image} alt={title} ></img>
+                    </Link>
+                    { show &&   <div>
+                                    <p className="card-text">{description}</p>
+                                    <Link to={`/store/detail/${id}`}> 
+                                        <button className="btn btn-dark">Ver Mas</button>
+                                    </Link>
+                                </div> 
+                    }
 
                     
                 </div>
-                <button className="btn btn-dark" onClick={onMoreDetails}>Ver detalle del producto { show ? '-': '+'} </button>
+                <button className="btn btn-dark" onClick={onMoreDetails}>Ver Descripcion producto { show ? '-': '+'} </button>
                 <ItemCounter stock={stock} minUnidadPorPedido={1} onAdd={onAdd}   />
             </div>
         </>        

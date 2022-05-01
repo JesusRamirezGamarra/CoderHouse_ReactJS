@@ -1,7 +1,8 @@
 // import React from 'react'
-import {Item} from '../../atoms/Item'
+import { Item } from '../../atoms/Item'
 
-const ItemList = ({items}) => {
+const ItemList = ( { items } ) => {
+
 
     return (
         <>
@@ -9,31 +10,26 @@ const ItemList = ({items}) => {
             <div className="row">
 
             {
-                items.map((product) => {
-                    console.log(product);
+                items.map((item) => {
+                    // console.log(item);
                     return (    
-                        <Item   key={product.id} 
-                                image={product.image}
-                                title={product.title} 
-                                description={product.description}
-                                category={product.category}
-                                price={product.price}
-                                Promoprice={product.Promoprice}
-                                stock={product.stock}
-                        />  );
+                        // <Item   key={item.id} 
+                        //         image={item.image}
+                        //         title={item.title} 
+                        //         description={item.description}
+                        //         category={item.category}
+                        //         price={item.price}
+                        //         Promoprice={item.Promoprice}
+                        //         stock={item.stock}
+                        // />  
+                        <Item {...item} key={item.id} />
+                        );
                 })
             }
-
-                {/* <Item productoNombre='Producto 01' produtoDescripcion='' />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item /> */}
             </div>
         </>
     )
 }
 
 
-export {ItemList}
+export { ItemList }

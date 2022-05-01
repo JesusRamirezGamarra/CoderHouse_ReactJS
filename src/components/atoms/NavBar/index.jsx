@@ -31,16 +31,17 @@ return (
                     <a className="nav-link" to='/' >Home</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" to="/hombres">Hombres</a>
+                    <a className="nav-link" to="/hombres">About US</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" to="/mujeres">Mujeres</a>
+                    <a className="nav-link" to="/Store">Store</a>
+                    {/* <link className="nav-link" to="./pages/catalog/index.jsx">Store</link> */}
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" to="/boys">Niños</a>
+                    <a className="nav-link" to="/boys">Category</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" to="/girls">Niñas</a>
+                    <a className="nav-link" to="/girls">Ofertas</a>
                 </li> 
                 </ul>
                 <form className="d-flex">

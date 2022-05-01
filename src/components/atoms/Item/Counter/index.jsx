@@ -12,7 +12,7 @@ const ItemCounter = ({stock =0,minUnidadPorPedido=1,onAdd}) => {
     }
 
     const onDecrease = () =>{
-        if( contador >0){
+        if( contador >1){
             setContador(contador - 1)
         }
         console.log(`Stock disponible : ${stock-contador}`)
