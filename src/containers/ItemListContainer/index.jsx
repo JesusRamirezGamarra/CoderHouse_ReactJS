@@ -8,7 +8,7 @@ import { ItemList } from '../../components/molecules/ItemList'
 
 
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -35,7 +35,6 @@ return (
         <>      
             {isLoaded ? (
                 <div>
-                    <h3>{greeting}</h3>
                     <ItemList items={items} />
                 </div>
             ) : ( <Loading /> )}  

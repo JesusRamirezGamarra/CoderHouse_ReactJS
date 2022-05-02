@@ -6,7 +6,6 @@ const ItemList = ( { items } ) => {
 
     return (
         <>
-            <div>index ItemList</div>
             <div className="row">
 
             {

@@ -52,7 +52,6 @@ const ItemDetailContainer = () => {
         <>
             {isLoaded ? (
                 <div>
-                    ItemDetailContainer
                             <div>   {   show  ? <ItemDetail item={product} key={product.id} /> 
                                         : <Page404 />
                                     }   
