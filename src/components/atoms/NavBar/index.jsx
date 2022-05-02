@@ -21,7 +21,7 @@ return (
     <nav className="navbar navbar-expand-lg  bg-poke">
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-                <img src={imgLOGO} height="42" alt="BFFs" />  POKE-eCommerce
+                <img src={imgLOGO} height="42" alt="BFFs - Best Friend Forever" />  POKE-eCommerce
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
                     aria-controls="navbarSupportedContent" aria-expanded="false"  aria-label="Toggle navigation" >

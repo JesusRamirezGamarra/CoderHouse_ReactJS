@@ -21,7 +21,7 @@ const ItemDetail = (  { item } ) => {
                         <h2>{title}</h2>
                         <h3>Tipo : {category}</h3>
                         
-                        <img src={image}></img> <br></br>
+                        <img src={image} alt={description} ></img> <br></br>
                         <div className="text-danger"><del><span className="card-text">USD {Promoprice}</span></del>
                         </div> 
                         <span className="card-text">USD {price}</span> 

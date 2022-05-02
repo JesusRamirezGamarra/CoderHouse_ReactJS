@@ -12,7 +12,7 @@ const Page404 = () => {
         <p className="text-center text-gray-500 md:text-lg">
         The page you’re looking for doesn’t exist.
         </p>
-        <img src={img404} alt="" className="w-[140px] m-auto" />
+        <img src={img404} alt="404 - File Not Found" className="w-[140px] m-auto" />
     </div>
     );
 };
