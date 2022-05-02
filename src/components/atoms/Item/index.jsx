@@ -1,6 +1,5 @@
 import React,{ useState } from 'react'
 import { ItemCounter } from './Counter'
-// import CurrencyFormat from 'react-currency-format';
 import { Link } from "react-router-dom";
 
 const Item  = ({
@@ -27,8 +26,7 @@ const Item  = ({
         count === 1 ? alert(message) : alert(`${message}s`);
         console.log('Agrege al Carrito')
     }
-    // var CurrencyFormat = require('react-currency-format');
-    
+        
     return (
         <>
             <div className="card col-lg-3" >   
@@ -37,13 +35,11 @@ const Item  = ({
                     <h6 className="card-title">{category}</h6>
                     <div className="text-danger"><del><span className="card-text">USD {Promoprice}</span></del>
                     </div> 
-                    <span className="card-text">USD {price}</span> 
-                    {/* <CurrencyFormat value={2456981} displayType={'text'}  thousandSeparator={true} prefix={'$'} /> */}
-                    
+                    <span className="card-text">USD {price}</span>                    
                 </div>            
                 <div className="card-body">       
                     <Link to={`/store/detail/${id}`}>   
-                        <img className="card-img-top" src={image==undefined?defaultImage:image} alt={title} ></img>
+                        <img className="card-img-top" src={image==undefined?defaultImage:image} alt={title} />
                     </Link>
                     { show &&   <div>
                                     <p className="card-text">{description}</p>
