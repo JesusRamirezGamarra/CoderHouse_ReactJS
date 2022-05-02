@@ -27,12 +27,12 @@ Incluir:
 A tener en cuenta: en la Rúbrica de Evaluación (ubicada en la carpeta de la camada) encontrarás un mayor detalle respecto a qué se tendrá en cuenta para la corrección.
 Importante: La entrega intermedia no supone la realización de un archivo aparte o extra; marca que en este momento se hará una revisión más integral
 
-![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/06-WebSockets/images/ingreso-tabla.png)
+![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/Desafio07.gif)
 
 Notas: 
-• No usar HashRouter como en el ejemplo del gif (usar BrowserRouter)
-• Utilizar el id de la categoría como nombre en la URL param en vez de números (vehículos, por ej)
-• Utilizar el id del item como URL param
+* No usar HashRouter como en el ejemplo del gif (usar BrowserRouter)
+* Utilizar el id de la categoría como nombre en la URL param en vez de números (vehículos, por ej)
+* Utilizar el id del item como URL param
 
 
 
