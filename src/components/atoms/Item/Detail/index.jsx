@@ -1,20 +1,10 @@
-// import React from 'react'
-// import { Item } from '../../atoms/Item'
-
-// const ItemDetail = ( product={product}, item={item} ) => {
 import { ItemCounter } from "../Counter";   
 const ItemDetail = (  { item } ) => {
 
     const { id, image, title, description, category, price, Promoprice, stock } = item;
 
-        // console.log(`ItemDetail item :>>`, {item})
-        // console.log(`ItemDetail item :>>`, {id})
-        // console.log(`ItemDetail item :>>`, {item})
-
-
     return (
         <>
-            <div>index ItemDetail nnnn</div>
             <div className="card col-lg-6">
                 <div className="item">
                     <div className="text">

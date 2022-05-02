@@ -26,7 +26,6 @@ const ItemCounter = ({stock =0,minUnidadPorPedido=1,onAdd}) => {
                 <div className="d-flex justify-content-between">
                     <button className="btn btn-outline-warning" onClick={onDecrease}>-</button>
                     <span className="align-middle" >    {contador}     </span> 
-                    {/* <div className="align-middle" > {contador}  </div> */}
                     <button className="btn btn-outline-warning" onClick={onIncrease}>+</button>
                 </div>
             </div>

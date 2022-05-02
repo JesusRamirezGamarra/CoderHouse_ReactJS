@@ -102,19 +102,11 @@ const data = [
     },
 ];
 
-// const getItems = new Promise((resolve) => {
-//     setTimeout(() => {
-//         // console.log('getItems')
-//         resolve(data);
-//     },2000);
-// });
 const getItems = (category) => {
     return new Promise((resolve,reject) => {
         setTimeout(() => {
             let items = data;
             if(category){
-                // items = data.filter(item => item.category === category);
-                // items = data.toLowerCase().indexOf(category.toLowerCase()) > -1;
                 items = data.filter(item => item.category.toLowerCase().indexOf(category.toLowerCase()) > -1)
             }
             resolve(items);
@@ -125,11 +117,6 @@ const getItems = (category) => {
 const getItemDetail = (itemId) => {
     return new Promise((resolve,reject) => {
         setTimeout(() => {
-            // console.log('getItemDetail')
-            // console.log('resolve' , resolve)
-            // console.log('reject' , reject)
-            // console.log('data' , data)
-            // console.log('itemId : ' , itemId)
             console.log('getItemDetail item :::: ' , data.find( (item) => item.id ===  parseInt(itemId)))
             resolve(data.find( (item) => item.id === parseInt(itemId))    );
 

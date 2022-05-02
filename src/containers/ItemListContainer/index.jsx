@@ -12,14 +12,9 @@ const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
-
     const { category } = useParams();
 
-    // console.log("Products before promise", items); // Empty
-    // console.log("category", category); // Empty
-
     useEffect(() => {
-        console.log("category", category); // Empty
         getItems(category)
         .then((response) => setItems(response))
         .catch((error) => console.log("error: ", error))

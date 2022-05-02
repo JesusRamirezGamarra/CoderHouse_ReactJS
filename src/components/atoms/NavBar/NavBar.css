@@ -1,27 +1,3 @@
-/* .nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background-color: bisque;
-    color: brown;
-}
-*/
-/* .nav a {
-    padding: 10px;
-    text-decoration: none;
-    color: white;
-}
-
-.nav a:hover {
-    color: blue;
-}  */
-
-/* .nav > li > a:hover{
-    background-color:#FFDE00;
-}
-*/
 a {
     color: #FFFFFF;
     font-size: 18px;
