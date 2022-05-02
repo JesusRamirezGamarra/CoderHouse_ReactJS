@@ -1,5 +1,41 @@
 # BFFs - Best Friend Forever Store 
-_Titulo : Nombre del proyecto de eCommerce para el curso de Coder House ReactJS._
+
+>>Consigna:
+Configura en App.js el routing usando un BrowserRouter de tu aplicación con react-router-dom
+Aspectos a incluir en el entregable:
+Rutas a configurar
+* ‘/’ navega a <ItemListContainer />
+* ‘/category/:id’  <ItemListContainer />
+* ‘/item/:id’ navega a <ItemDetailContainer />
+
+Links a configurar
+* Clickear en el brand debe navegar a ‘/’
+* Clickear un Item.js debe navegar a /item/:id
+* Clickear en una categoría del navbar debe navegar a /category/:categoryId 
+
+Para finalizar integra los parámetros de tus async-mocks para reaccionar a :itemId y :categoryId ¡utilizando efectos y los hooks de parámetros que vimos en clase! Si te encuentras en una categoría deberías poder detectar la navegación a otra categoría y volver a cargar los productos que correspondan a dicha categoría
+
+>>Además:
+Deberás corroborar que tu proyecto cuente con:
+* Navbar con cart
+* Catálogo
+* Detalle de producto
+
+Incluir:
+* Archivo readme.md
+
+A tener en cuenta: en la Rúbrica de Evaluación (ubicada en la carpeta de la camada) encontrarás un mayor detalle respecto a qué se tendrá en cuenta para la corrección.
+Importante: La entrega intermedia no supone la realización de un archivo aparte o extra; marca que en este momento se hará una revisión más integral
+
+![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/06-WebSockets/images/ingreso-tabla.png)
+
+Notas: 
+• No usar HashRouter como en el ejemplo del gif (usar BrowserRouter)
+• Utilizar el id de la categoría como nombre en la URL param en vez de números (vehículos, por ej)
+• Utilizar el id del item como URL param
+
+
+
  
 ## Entendiendo Atomic Design
 
