@@ -6,17 +6,18 @@ import { Page404 } from "../../pages/error/page404"
 import { getItems } from '../../services/getItems'
 import { ItemList } from '../../components/molecules/ItemList'
 
-
-
 const ItemListContainer = () => {
 
-    const [items, setItems] = useState([]);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [ items, setItems] = useState([]);
+    const [ isLoaded, setIsLoaded] = useState(false);
+    const [ show, setShow] = useState(true);
     const { category } = useParams();
 
     useEffect(() => {
         getItems(category)
-        .then((response) => setItems(response))
+        .then((response) => {
+            response ? setItems(response) : setShow(false)
+        })
         .catch((error) => console.log("error: ", error))
         .finally(
             setTimeout(() => {
@@ -30,7 +31,9 @@ return (
         <>      
             {isLoaded ? (
                 <div>
-                    <ItemList items={items} />
+                    {   show    ? <ItemList items={items} /> 
+                                : <Page404 />
+                    }                       
                 </div>
             ) : ( <Loading /> )}  
         </>

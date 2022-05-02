@@ -8,9 +8,9 @@ import { getItemDetail } from '../../services/getItems'
 
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({});
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [show, setShow] = useState(true);
+    const [ product, setProduct] = useState({});
+    const [ isLoaded, setIsLoaded] = useState(false);
+    const [ show, setShow] = useState(true);
     const { itemId } = useParams();
 
     useEffect(() => {
@@ -18,8 +18,7 @@ const ItemDetailContainer = () => {
         getItemDetail(itemId)
         .then((response) => {
             response ? setProduct(response) : setShow(false)
-            }
-        )
+        })
         .catch((error) => {
             setShow(false);
             console.log("error: ", error)
@@ -35,8 +34,8 @@ const ItemDetailContainer = () => {
     return (
         <>
             {isLoaded ? (
-                <div>
-                            <div>   {   show  ? <ItemDetail item={product} key={product.id} /> 
+                <div >
+                            <div className="row" >   {   show  ? <ItemDetail item={product} key={product.id} /> 
                                         : <Page404 />
                                     }   
                             </div>

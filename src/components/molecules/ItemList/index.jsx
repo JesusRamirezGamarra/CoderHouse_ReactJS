@@ -6,7 +6,6 @@ const ItemList = ( { items } ) => {
     return (
         <>
             <div className="row">
-
             {
                 items.map((item) => {
                     return (    

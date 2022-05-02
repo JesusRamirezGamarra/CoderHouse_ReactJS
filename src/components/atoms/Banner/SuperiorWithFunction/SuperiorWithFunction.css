@@ -1,8 +1,15 @@
 .BannerSuperiorExtends{
     background-color: #FFFFFF;
-    color:#000000
+    color:#000000;
+    
 }
 
+@media screen and (min-width: 1024px){
+    .BannerPromo span {
+        font-size: 0;
+        display: block;
+    }
+}
 
 
 /* 
