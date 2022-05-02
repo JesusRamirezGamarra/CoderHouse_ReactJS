@@ -1,4 +1,5 @@
 # BFFs - Best Friend Forever Store 
+![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/PokeStore.png)
 
 ## Consigna:
 Configura en App.js el routing usando un BrowserRouter de tu aplicación con react-router-dom
