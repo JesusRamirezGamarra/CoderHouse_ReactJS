@@ -64,7 +64,7 @@ const data = [
         id: 7,
         image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
         title: "Squirtle N.º007",
-        description: "este es el séptimo producto",
+        description: "Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.",
         category: "Agua",
         price: "120",
         Promoprice: "100",
@@ -102,13 +102,25 @@ const data = [
     },
 ];
 
-const getItems = new Promise((resolve) => {
-    setTimeout(() => {
-        // console.log('getItems')
-        resolve(data);
-    },2000);
-});
-
+// const getItems = new Promise((resolve) => {
+//     setTimeout(() => {
+//         // console.log('getItems')
+//         resolve(data);
+//     },2000);
+// });
+const getItems = (category) => {
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            let items = data;
+            if(category){
+                // items = data.filter(item => item.category === category);
+                // items = data.toLowerCase().indexOf(category.toLowerCase()) > -1;
+                items = data.filter(item => item.category.toLowerCase().indexOf(category.toLowerCase()) > -1)
+            }
+            resolve(items);
+        },2000);
+    })
+}
 
 const getItemDetail = (itemId) => {
     return new Promise((resolve,reject) => {
@@ -123,7 +135,6 @@ const getItemDetail = (itemId) => {
 
         }, 2000);
     })
-};
+}
 
 export { getItems, getItemDetail };
-

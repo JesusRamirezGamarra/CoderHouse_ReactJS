@@ -1,4 +1,4 @@
-.nav {
+/* .nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -7,13 +7,78 @@
     background-color: bisque;
     color: brown;
 }
-
-.nav a {
+*/
+/* .nav a {
     padding: 10px;
     text-decoration: none;
-    color: brown;
+    color: white;
 }
 
 .nav a:hover {
     color: blue;
+}  */
+
+/* .nav > li > a:hover{
+    background-color:#FFDE00;
 }
+*/
+a {
+    color: #FFFFFF;
+    font-size: 18px;
+} 
+
+a:hover{
+    color:#FFDE00;
+}
+
+.nav-link {
+    color: #FFDE00;
+}
+
+a .nav-link :hover{ 
+    color: #FFFFFF;
+}
+
+.bg-poke{
+    background-color: #FF0000;
+}
+
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus,
+.navbar .navbar-nav > .active > a:hover,
+.navbar .navbar-nav > .active > a:focus {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+.btn-outline-success-poke{
+    background-color: #3B4CCA;
+    border-color: #3B4CCA;
+    color: #FFFFFF;
+}
+
+
+
+.btn-outline-success-poke:hover,
+.bbtn-outline-success-poke:active,
+.btn-outline-success-poke:visited,
+.btn-outline-success-poke:focus {
+    background-color: #FFDE00;
+    border-color: #FFDE00;
+    color: #FF0000;
+}
+
+/* 
+Poke Colors:
+https://www.schemecolor.com/pokemon-colors.php#download 
+#FFFFFF;
+#000000;
+
+#FF0000;
+#CC0000;
+#3B4CCA;
+#FFDE00;
+#B3A125;
+
+*/

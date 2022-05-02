@@ -4,8 +4,8 @@ import './SuperiorWithFunction.css'
 const SuperiorWithFunction = (props) => {
 let {promocionPrincipal , promocionSecundaria} = props;
     return (
-        <div className="BannerSuperior">Aplica al {promocionPrincipal}% de descuento Coder React  | 🗓️ Ya es marzo, obtén hasta un {promocionSecundaria}% OFF adicional en categorias de hombres y niños
-        <br></br> + 3 cuotas sin interés | Hasta el 19/03 ⏱️</div>
+        <div className="BannerSuperior">Aplica al {promocionPrincipal}% de descuento Coder React  | 🗓️ Ya es Mayo, obtén hasta un {promocionSecundaria}% OFF adicional en Poke Tipo Agua
+        <br></br> + 6 cuotas sin interés | Hasta el 28/05 ⏱️</div>
     )
 }
 

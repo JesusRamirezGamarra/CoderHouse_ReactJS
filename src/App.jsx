@@ -28,7 +28,7 @@ export function App() {
                     <Route path="/" element={<Home/>}  /> 
                     <Route path="/home" element={<Home/>}  /> 
                     <Route path="/store" element={<ItemListContainer/>}  /> 
-                    <Route path="/store/:categoryId" element={<ItemListContainer/>}  /> 
+                    <Route path="/store/:category" element={<ItemListContainer/>}  /> 
                     <Route path="/store/detail/:itemId" element={<ItemDetailContainer/>}  /> 
                     {/* <Route path="/store" components={<ItemListContainer/>}  />  */}
                     {/* <Route path="/catalogo" components={Catalogo} />

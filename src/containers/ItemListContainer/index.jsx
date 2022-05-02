@@ -15,10 +15,12 @@ const ItemListContainer = ({greeting}) => {
 
     const { category } = useParams();
 
-    console.log("Products before promise", items); // Empty
+    // console.log("Products before promise", items); // Empty
+    // console.log("category", category); // Empty
 
     useEffect(() => {
-        getItems
+        console.log("category", category); // Empty
+        getItems(category)
         .then((response) => setItems(response))
         .catch((error) => console.log("error: ", error))
         .finally(
@@ -26,7 +28,7 @@ const ItemListContainer = ({greeting}) => {
                 setIsLoaded(true);
             }, 800)
         );
-    }, []);
+    }, [category]);
 
 
 return (
