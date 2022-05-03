@@ -1,6 +1,49 @@
+
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/Logo_Negro.png" alt="BFFs" height="250">    
+  </p>
+  <p align="center">
+        E-commerce 
+  </p>
+    <p align="center">
+        Best Friend Forever
+  </p>
+</p>
+
+
+
+
 # BFFs - Best Friend Forever Store 
 
+E-commerce desarrollado en ReactJS, que simboliza una feria de Jugues de PoKemon , para comercializar todo tipo de muñeco de acción de Pokemon.
+
+
+![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/BFFs.gif)
+
+----------
+
 ![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/PokeStore.png)
+
+---
+
+<i class="icon-cog"></i>**Dependencias del proyecto:**
+
+- **Ninguna** 
+
+
+**<i class="icon-cog"> Navegabilidad / Componentes**
+- [X] Responsive / estilos aplicados de forma estética.
+- [X] Manejo de imágenes.
+- [X] camelCase para eventos.
+- [X] PascalCase para componentes.
+- [X] Routes y Links para navegaciones.
+- [X] Navbar con carrito implementado.
+- [X] Promises y Hooks.
+
+----------
+
+
 
 ## Consigna:
 Configura en App.js el routing usando un BrowserRouter de tu aplicación con react-router-dom

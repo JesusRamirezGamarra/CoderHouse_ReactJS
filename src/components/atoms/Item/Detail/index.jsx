@@ -5,8 +5,8 @@ const ItemDetail = (  { item } ) => {
 
     return (
         <>
-            <div  className="card col-lg-3"></div>
-            <div className="card col-lg-6">
+            <div  className="card col-lg-2"></div>
+            <div className="card col-lg-8">
                 <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                         <img src={image} alt={description} />
@@ -28,7 +28,7 @@ const ItemDetail = (  { item } ) => {
                     </div>
                 </div>    
             </div>
-            <div  className="card col-lg-3"></div>                  
+            <div  className="card col-lg-2"></div>                  
         </>
     )
 }
