@@ -6,9 +6,6 @@
   <p align="center">
         E-commerce 
   </p>
-    <p align="center">
-        Best Friend Forever
-  </p>
 </p>
 
 
@@ -18,18 +15,20 @@
 
 E-commerce desarrollado en ReactJS, que simboliza una feria de Jugues de PoKemon , para comercializar todo tipo de muñeco de acción de Pokemon.
 
-
+## Demo
+---
 ![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/BFFs.gif)
-
-----------
-
-![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/PokeStore.png)
 
 ---
 
 <i class="icon-cog"></i>**Dependencias del proyecto:**
 
-- **Ninguna** 
+-   "classnames": "^2.3.1",
+-   "react": "^18.0.0",
+-   "react-dom": "^18.0.0",
+-   "react-icons": "^4.3.1",
+-   "react-router-dom": "^6.3.0",
+-   "react-scripts": "5.0.0"
 
 
 **<i class="icon-cog"> Navegabilidad / Componentes**
@@ -41,7 +40,7 @@ E-commerce desarrollado en ReactJS, que simboliza una feria de Jugues de PoKemon
 - [X] Navbar con carrito implementado.
 - [X] Promises y Hooks.
 
-----------
+---
 
 
 

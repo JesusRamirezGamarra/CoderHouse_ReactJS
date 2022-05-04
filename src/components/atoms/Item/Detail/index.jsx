@@ -2,16 +2,19 @@ import { ItemCounter } from "../Counter";
 const ItemDetail = (  { item } ) => {
 
     const { id, image, title, description, category, price, Promoprice, stock } = item;
+    const onAdd = () =>{
+        console.log('Agrege al Carrito' )
+    }
 
     return (
         <>
             <div  className="card col-lg-2"></div>
             <div className="card col-lg-8">
-                <div class="d-flex align-items-center">
-                    <div class="flex-shrink-0">
+                <div className="d-flex align-items-center">
+                    <div className="flex-shrink-0">
                         <img src={image} alt={description} />
                     </div>
-                    <div class="flex-grow-1 ms-3">
+                    <div className="flex-grow-1 ms-3">
                         <div className="item ">
                             <div className="text">
                                 <h2>{title}</h2>
@@ -22,7 +25,7 @@ const ItemDetail = (  { item } ) => {
                                 <p>{description}</p>
                             </div>
                             <div className="item">
-                                <ItemCounter stock={stock} minUnidadPorPedido={1}  />
+                                <ItemCounter stock={stock} minUnidadPorPedido={1} onAdd={onAdd} />
                             </div>                    
                         </div>   
                     </div>

@@ -21,10 +21,8 @@ const Item  = ({
         setShow(!show)
     }
 
-    const onAdd = (count) =>{
-        const message = `Agregaste ${count} producto`;
-        count === 1 ? alert(message) : alert(`${message}s`);
-        console.log('Agrege al Carrito')
+    const onAdd = () =>{
+        console.log('Agrege al Carrito' )
     }
         
     return (
