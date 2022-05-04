@@ -22,27 +22,27 @@ return (
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mx-auto">
-                <li className="nav-item">
-                    <Link className="nav-link" to='/' >Home</Link>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" to="/hombres">About US</a>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/Store">Store</Link>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" to="/girls">Ofertas</a>
-                </li> 
+                    <li className="nav-item">
+                        <Link className="nav-link" to='/' >Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/">About US</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/Store">Store</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/">Ofertas</Link>
+                    </li> 
                 </ul>
                 <form className="d-flex">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={event => setInputSearch(event.target.value)}   />
                     <Link className="btn btn-outline-success-poke" to={`/Store/${inputSearch}`}>Store</Link>
                 </form>
             </div>
-            <a className="navbar-brand  mx-auto" to="/">
+            <Link className="navbar-brand  mx-auto" to="/Store">
                 <CartWidget cantidad={cantidad} />
-            </a>
+            </Link>
         </div>
     </nav>
 </div>

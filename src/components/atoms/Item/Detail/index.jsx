@@ -1,7 +1,7 @@
 import { ItemCounter } from "../Counter";   
 const ItemDetail = (  { item } ) => {
 
-    const { id, image, title, description, category, price, Promoprice, stock } = item;
+    const {  image, title, description, category, price, Promoprice, stock } = item;
     const onAdd = () =>{
         console.log('Agrege al Carrito' )
     }

@@ -37,7 +37,7 @@ const Item  = ({
                 </div>            
                 <div className="card-body">       
                     <Link to={`/store/detail/${id}`}>   
-                        <img className="card-img-top" src={image==undefined?defaultImage:image} alt={title} />
+                        <img className="card-img-top" src={image===undefined?defaultImage:image} alt={title} />
                     </Link>
                     { show &&   <div>
                                     <p className="card-text">{description}</p>
