@@ -1,9 +1,15 @@
+import React ,{useState} from 'react'
 import { ItemCounter } from "../Counter";   
+import { Link } from "react-router-dom";
+
 const ItemDetail = (  { item } ) => {
 
-    const {  image, title, description, category, price, Promoprice, stock } = item;
-    const onAdd = () =>{
-        console.log('Agrege al Carrito' )
+    const [count, setCount] = useState(1);
+    const {  image, title, description, descriptionLong, etimology, category, price, Promoprice, stock } = item;
+    // const []
+
+    const onAdd = (quantityToAdd) =>{
+        console.log('Agrege al Carrito',quantityToAdd )
     }
 
     return (
@@ -23,9 +29,22 @@ const ItemDetail = (  { item } ) => {
                                 </div> 
                                 <span className="card-text">USD {price}</span> 
                                 <p>{description}</p>
+                                {/* <p>{descriptionLong}</p> */}
+                                <h3>Etimologia :</h3>
+                                <p>{etimology}</p>
                             </div>
                             <div className="item">
-                                <ItemCounter stock={stock} minUnidadPorPedido={1} onAdd={onAdd} />
+                                <ItemCounter 
+                                    stock={stock} 
+                                    onAdd={onAdd} 
+                                    count={count}
+                                    setCount={setCount}                                    
+                                />
+                                <Link
+                                    to={"/cart"}
+                                >
+                                    <button className="btn btn-outline-dark btn-lg btn-block" >Ir al carrito</button>
+                                </Link>                                   
                             </div>                    
                         </div>   
                     </div>

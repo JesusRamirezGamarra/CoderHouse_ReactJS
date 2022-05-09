@@ -7,6 +7,8 @@ const Item  = ({
                 image,
                 title='Sin Descripcion',
                 description='Sin Descripcion',
+                descriptionLong='Sin Descripcion',
+                etimology='Sin Descripcion',
                 category='Sin Descripcion',
                 price,
                 Promoprice,
@@ -14,6 +16,8 @@ const Item  = ({
                 }) => {
 
     const defaultImage = 'https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/inventory-maintenance.png'
+    
+    const [count, setCount] = useState(1);                    
     const [show,setShow] = useState(false)
     
     const onMoreDetails = () =>{
@@ -21,9 +25,11 @@ const Item  = ({
         setShow(!show)
     }
 
-    const onAdd = () =>{
-        console.log('Agrege al Carrito' )
+
+    const onAdd = (quantityToAdd) =>{
+        console.log('Agrege al Carrito',quantityToAdd )
     }
+
         
     return (
         <>
@@ -39,19 +45,34 @@ const Item  = ({
                     <Link to={`/store/detail/${id}`}>   
                         <img className="card-img-top" src={image===undefined?defaultImage:image} alt={title} />
                     </Link>
-                    { show &&   <div>
-                                    <p className="card-text">{description}</p>
-                                    <Link to={`/store/detail/${id}`}> 
+                    <p className="card-text">{description}</p>
+                    {/* { show &&   <div>
+                                    <p className="card-text">{description}</p> */}
+                                    {/* <Link to={`/store/detail/${id}`}> 
                                         <button className="btn btn-dark">Ver Mas</button>
-                                    </Link>
-                                </div> 
-                    }
+                                    </Link> */}
+                                {/* </div>  */}
+                    {/* } */}
 
                     
                 </div>
-                <button className="btn btn-dark" onClick={onMoreDetails}>Ver Descripcion producto { show ? '-': '+'} </button>
-                <ItemCounter stock={stock} minUnidadPorPedido={1} onAdd={onAdd}   />
+                <Link to={`/store/detail/${id}`}> 
+                                        <button className="btn btn-dark">Ver Mas</button>
+                                    </Link>                
+                {/* <button className="btn btn-dark" onClick={onMoreDetails}>Ver Descripcion producto { show ? '-': '+'} </button> */}
+                <ItemCounter 
+                    stock={stock} 
+                    onAdd={onAdd} 
+                    count={count}
+                    setCount={setCount} 
+                />
+                <Link
+                    to={"/cart"}
+                >
+                    <button className="btn btn-outline-dark btn-lg btn-block" >Ir al carrito</button>
+                </Link>                
             </div>
+
         </>        
     )
 }
