@@ -5,11 +5,15 @@ import { Link } from "react-router-dom";
 const ItemDetail = (  { item } ) => {
 
     const [count, setCount] = useState(1);
+    const [add,setAdd] = useState(false);
+    
     const {  image, title, description, descriptionLong, etimology, category, price, Promoprice, stock } = item;
-    // const []
+
 
     const onAdd = (quantityToAdd) =>{
         console.log('Agrege al Carrito',quantityToAdd )
+        console.log(add)
+        setAdd(true)
     }
 
     return (
@@ -34,12 +38,16 @@ const ItemDetail = (  { item } ) => {
                                 <p>{etimology}</p>
                             </div>
                             <div className="item">
+                            {add ? 
+                                <p>"Producto Agregado"</p>
+                            :
                                 <ItemCounter 
                                     stock={stock} 
                                     onAdd={onAdd} 
                                     count={count}
                                     setCount={setCount}                                    
                                 />
+                            }
                                 <Link
                                     to={"/cart"}
                                 >

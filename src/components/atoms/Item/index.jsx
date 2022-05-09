@@ -18,7 +18,8 @@ const Item  = ({
     const defaultImage = 'https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/inventory-maintenance.png'
     
     const [count, setCount] = useState(1);                    
-    const [show,setShow] = useState(false)
+    const [show,setShow] = useState(false);
+    const [add,setAdd] = useState(false);
     
     const onMoreDetails = () =>{
         console.log(`OnMoreDetails : ${show}`)
@@ -28,6 +29,8 @@ const Item  = ({
 
     const onAdd = (quantityToAdd) =>{
         console.log('Agrege al Carrito',quantityToAdd )
+        console.log(add)
+        setAdd(true)
     }
 
         
@@ -60,12 +63,18 @@ const Item  = ({
                                         <button className="btn btn-dark">Ver Mas</button>
                                     </Link>                
                 {/* <button className="btn btn-dark" onClick={onMoreDetails}>Ver Descripcion producto { show ? '-': '+'} </button> */}
-                <ItemCounter 
-                    stock={stock} 
-                    onAdd={onAdd} 
-                    count={count}
-                    setCount={setCount} 
-                />
+                <div>
+                {add ? 
+                    <p>"Producto Agregado"</p>
+                    :
+                    <ItemCounter 
+                        stock={stock} 
+                        onAdd={onAdd} 
+                        count={count}
+                        setCount={setCount} 
+                    />                   
+                }
+                </div>
                 <Link
                     to={"/cart"}
                 >
@@ -77,4 +86,4 @@ const Item  = ({
     )
 }
 
-export {Item}
+export { Item }
