@@ -1,21 +1,46 @@
-import React ,{useState} from 'react'
+import React ,{ useState, useEffect } from 'react'
 import { TiShoppingCart } from 'react-icons/ti';
+import { getItemStock } from "../../../../services/getItems";
 
-const ItemCounter = ({stock =0, onAdd , count , setCount}) => {
+
+const ItemCounter = ({id, addToCart , count , setCount , stock }) => {
     // const [count,setCount] = useState(minUnidadPorPedido)
+    //let stock = 10;//getItemStock(id);
+    // let stock = getItemStock(id)
+    //  const [ stock, setStock] = useState(0);
 
-    const onIncrease = () =>{
-        if(count < stock){
+    // useEffect(() => {
+    //     getItemStock(id)
+    //     .then((response) => {
+    //         console.log('response',response)
+    //         // setStock(response);
+    //     })
+    //     .catch((error) => console.log("error: ", error))
+    //     // .finally(
+    //     //     setTimeout(() => {
+    //     //         setIsLoaded(true);
+    //     //     }, 800)
+    //     // );
+    // }, 0);
+
+    
+
+
+    const onIncrease = async() =>{
+        
+        if(count <  stock){
             setCount(count + 1)
+            console.log('stock Transaction: ',stock)
+            console.log('Unidades Solicitadas: ',count + 1 )
         }
-        console.log(`Stock disponible : ${stock-count}`)
     }
 
-    const onDecrease = () =>{
+    const onDecrease = async() =>{
         if( count >1){
             setCount(count - 1)
+            console.log('stock Transaction: ',stock)
+            console.log('Unidades Solicitadas: ', count - 1)            
         }
-        console.log(`Stock disponible : ${stock-count}`)
     }
 
 
@@ -30,7 +55,7 @@ const ItemCounter = ({stock =0, onAdd , count , setCount}) => {
                 </div>
             </div>
             <button className="btn btn-outline-warning btn-lg btn-block" 
-                    onClick={() => (count <= stock) && onAdd(count)} > Agregar al Carrito <TiShoppingCart />
+                    onClick={() => (count <= stock) && addToCart(count)} > Agregar al Carrito <TiShoppingCart />
             </button>
             <div className="card-footer text-muted  ">
             <span className="align-middle" > stock disponible :   {stock-count}     </span> 

@@ -1,20 +1,41 @@
-import React ,{useState} from 'react'
+import React ,{useState, useContext} from 'react'
 import { ItemCounter } from "../Counter";   
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../../context/CartContext";
 
 const ItemDetail = (  { item } ) => {
 
+    const { id, image, title, description, descriptionLong, etimology, category, price, Promoprice, stock} = item;
+
+    const [quantity, setQuantity] = useState(0);
     const [count, setCount] = useState(1);
-    const [add,setAdd] = useState(false);
-    
-    const {  image, title, description, descriptionLong, etimology, category, price, Promoprice, stock } = item;
+    const [add,setAdd] = useState(false);    
+
+    const { addToCart, isProductInCart, addToExistingProd, limitStock} = useContext( CartContext );
+
+    // const { agregarAlCarrito } = CartContext();
+    // const Swal = require("sweetalert2");
 
 
-    const onAdd = (quantityToAdd) =>{
-        console.log('Agrege al Carrito',quantityToAdd )
-        console.log(add)
-        setAdd(true)
-    }
+    const productItem = { id, image, title,price,count,stock,description,descriptionLong,etimology,category,Promoprice };
+
+
+    const pushToCart = async (quantityToAdd) => {
+        console.log('pushToCart',quantityToAdd )
+        if (!isProductInCart(id)) addToCart(productItem);
+        if (isProductInCart(id) && (await limitStock(productItem)))
+            addToExistingProd(productItem);
+    };
+
+    // const onAdd = (quantityToAdd) =>{
+    //     console.log('Agrege al Carrito',quantityToAdd )
+    //     console.log(add)
+    //     setQuantity(quantityToAdd);
+    //     setAdd(true)
+    //     // agregarAlCarrito(item, count, quantity);
+    //     // Swal.fire("Producto Agregado", "Seguir comprando!", "success");
+
+    // }
 
     return (
         <>
@@ -42,17 +63,22 @@ const ItemDetail = (  { item } ) => {
                                 <p>"Producto Agregado"</p>
                             :
                                 <ItemCounter 
-                                    stock={stock} 
-                                    onAdd={onAdd} 
+                                    id={id} 
+                                    addToCart={pushToCart} 
                                     count={count}
                                     setCount={setCount}                                    
+                                    stock ={stock}
                                 />
                             }
+                            {isProductInCart(id) ? (
                                 <Link
                                     to={"/cart"}
                                 >
                                     <button className="btn btn-outline-dark btn-lg btn-block" >Ir al carrito</button>
-                                </Link>                                   
+                                </Link>
+                            ) : (
+                            <></>
+                            )}
                             </div>                    
                         </div>   
                     </div>

@@ -1,3 +1,5 @@
+import { ItemCounter } from "../components/atoms/Item/Counter";
+
 const data = [
     {
         id: 1,
@@ -124,24 +126,33 @@ const data = [
 
 const getItems = (category) => {
     return new Promise((resolve,reject) => {
-        // setTimeout(() => {
             let items = data;
             if(category){
                 items = data.filter(item => item.category.toLowerCase().indexOf(category.toLowerCase()) > -1)
             }
             resolve(items);
-        // },2000);
     })
 }
+
+const getItemStock = async (itemId) => {
+    // return new Promise((resolve,reject) => {
+    //     resolve(data.find( (item) => item.id === parseInt(itemId)).stock  );
+    // })
+    // let stock = await getItemDetail(itemId).then((response)=> response.stock);
+    // console.log('getItemStock' , stock);
+    //return  await 100;//getItemDetail(itemId).then((response)=> response.stock);
+
+    let item = data.find( (item) => item.id === parseInt(itemId)) ;
+    console.log(item.stock);
+    return item.stock;
+}
+
+
+
 
 const getItemDetail = (itemId) => {
     return new Promise((resolve,reject) => {
-        // setTimeout(() => {
-            // console.log('getItemDetail item :::: ' , data.find( (item) => item.id ===  parseInt(itemId)))
-            resolve(data.find( (item) => item.id === parseInt(itemId))    );
-
-        // }, 2000);
+        resolve(data.find( (item) => item.id === parseInt(itemId))    );
     })
 }
-
-export { getItems, getItemDetail };
+export { getItems, getItemDetail, getItemStock };

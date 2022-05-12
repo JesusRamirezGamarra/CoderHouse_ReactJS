@@ -1,26 +1,28 @@
-import React,{ useState } from 'react'
+import React ,{useState, useContext} from 'react'
 import { ItemCounter } from './Counter'
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
-const Item  = ({
-                id,
-                image,
-                title='Sin Descripcion',
-                description='Sin Descripcion',
-                descriptionLong='Sin Descripcion',
-                etimology='Sin Descripcion',
-                category='Sin Descripcion',
-                price,
-                Promoprice,
-                stock='Sin Descripcion'
-                }) => {
+const Item  = ( item ) => {
 
+    const { id, image, title, description, descriptionLong, etimology, category, price, Promoprice, stock } = item;
     const defaultImage = 'https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/inventory-maintenance.png'
     
     const [count, setCount] = useState(1);                    
     const [show,setShow] = useState(false);
     const [add,setAdd] = useState(false);
-    
+    const { addToCart, isProductInCart, addToExistingProd, limitStock} = useContext( CartContext );
+
+    const productItem = { id, image, title,price,count,stock,description,descriptionLong,etimology,category,Promoprice };
+
+    const pushToCart = async (quantityToAdd) => {
+        console.log('pushToCart',quantityToAdd )
+        if (!isProductInCart(id)) addToCart(productItem);
+        if (isProductInCart(id) && (await limitStock(productItem)))
+            addToExistingProd(productItem);
+    };
+
+
     const onMoreDetails = () =>{
         console.log(`OnMoreDetails : ${show}`)
         setShow(!show)
@@ -36,7 +38,7 @@ const Item  = ({
         
     return (
         <>
-            <div className="card col-lg-3" >   
+            <div className="card col-lg-2" >   
                 <div className="card-header">
                     <h4 className="card-title">{title}</h4>
                     <h6 className="card-title">{category}</h6>
@@ -68,10 +70,11 @@ const Item  = ({
                     <p>"Producto Agregado"</p>
                     :
                     <ItemCounter 
-                        stock={stock} 
-                        onAdd={onAdd} 
+                        id={id} 
+                        addToCart={pushToCart} 
                         count={count}
                         setCount={setCount} 
+                        stock ={stock}
                     />                   
                 }
                 </div>

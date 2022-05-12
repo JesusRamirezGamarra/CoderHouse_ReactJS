@@ -11,8 +11,9 @@
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0"
-    
+    "react-scripts": "5.0.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.4.13"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,8 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-
   }
 }
