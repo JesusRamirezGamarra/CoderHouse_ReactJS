@@ -7,7 +7,7 @@ import { CartWidget } from '../Widget/Cart';
 
 const NavBar = (props) => {
 
-    const cantidad ='4';
+    // const cantidad ='4';
     const [inputSearch, setInputSearch] = useState('')
 return (
 
@@ -41,9 +41,9 @@ return (
                     <Link className="btn btn-outline-success-poke" to={`/Store/${inputSearch}`}>Store</Link>
                 </form>
             </div>
-            <Link className="navbar-brand  mx-auto" to="/Store">
-                <CartWidget cantidad={cantidad} />
-            </Link>
+            {/* <Link className="navbar-brand  mx-auto" to="/Store"> */}
+                <CartWidget />
+            {/* </Link> */}
         </div>
     </nav>
 </div>

@@ -177,12 +177,17 @@ function getItems(category){
     itemsCollection = query(itemsCollection,
         orderBy("orden", "asc")
     )
+    console.log('itemsCollection',itemsCollection)
     const q =category && query(
         // collection(dataFireBase,'items'),
         itemsCollection,
         where('category', '==', category)
+        // startAt(category),
+        // endAt(category+'\uf8ff')
     )
-    
+    // q.startAt(category).endAt(category+'\uf8ff')
+    console.log('itemsCollection',itemsCollection)
+    console.log('q',q)
     
     return getDocs(q || itemsCollection)
 
