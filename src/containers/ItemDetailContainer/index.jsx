@@ -6,6 +6,9 @@ import { Page404 } from "../../pages/error/page404";
 import { ItemDetail } from "../../components/atoms/Item/Detail";
 import { getItemDetail } from '../../services/getItems'
 
+import { doc } from 'firebase/firestore'
+
+
 
 const ItemDetailContainer = () => {
     const [ product, setProduct] = useState({});
@@ -13,15 +16,21 @@ const ItemDetailContainer = () => {
     const [ show, setShow] = useState(true);
     const { itemId } = useParams();
 
+
     useEffect(() => {
 
         getItemDetail(itemId)
-        .then((response) => {
-            response ? setProduct(response) : setShow(false)
+        .then((snapshot) => {
+
+            // snapshot ? setProduct(snapshot.docs.map(doc => {
+            //     return { ...doc.data(), id: doc.id }
+            //     })) : setShow(false)
+
+            snapshot ? setProduct({...snapshot.data(), id: doc.id }) : setShow(false)
         })
         .catch((error) => {
             setShow(false);
-            console.log("error: ", error)
+            console.log("error : ", error)
         })
         .finally(
             setTimeout(() => {
@@ -29,6 +38,24 @@ const ItemDetailContainer = () => {
             }, 800)
         );
     }, [itemId]);
+
+
+    // useEffect(() => {
+
+    //     getItemDetail(itemId)
+    //     .then((response) => {
+    //         response ? setProduct(response) : setShow(false)
+    //     })
+    //     .catch((error) => {
+    //         setShow(false);
+    //         console.log("error: ", error)
+    //     })
+    //     .finally(
+    //         setTimeout(() => {
+    //             setIsLoaded(true);
+    //         }, 800)
+    //     );
+    // }, [itemId]);
 
 
 

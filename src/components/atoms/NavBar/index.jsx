@@ -1,7 +1,8 @@
 import React,{ useState } from 'react'
 import {Link} from 'react-router-dom';
 import './NavBar.css';
-import imgLOGO from './images/BFFs-LOGO-SB.png';  
+// import imgLOGO from './images/BFFs-LOGO-SB.png';  
+import imgLOGO from './images/BFF_LOGO_Negro.png';  
 import { CartWidget } from '../Widget/Cart';
 
 const NavBar = (props) => {

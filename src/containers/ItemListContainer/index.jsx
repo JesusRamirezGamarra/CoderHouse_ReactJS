@@ -8,6 +8,8 @@ import { ItemList } from '../../components/molecules/ItemList'
 
 import { CartContext } from "../../context/CartContext";
 
+// import { collection, getDocs, getFirestore, query, where, limit  } from 'firebase/firestore'
+
 
 const ItemListContainer = () => {
 
@@ -19,8 +21,17 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         getItems(category)
-        .then((response) => {
-            response ? setItems(response) : setShow(false)
+        .then(snapshot => {
+            // console.log(snapshot.docs.map(doc => {
+            //             return { ...doc.data(), id: doc.id }
+            //         } 
+            //     ))
+            setItems(snapshot.docs.map(doc => {
+                return { ...doc.data(), id: doc.id }
+                }))
+            console.log(snapshot.docs.map(doc => {
+                return { ...doc.data(), id: doc.id }
+                }))
         })
         .catch((error) => {
             setShow(false)
@@ -31,6 +42,47 @@ const ItemListContainer = () => {
                 setIsLoaded(true);
             }, 800)
         );
+
+
+        // const db = getFirestore();
+        // const itemsCollection = collection(db, 'items');
+        // const q = query(
+        //     itemsCollection,
+        //     where('price', '<=', 120),
+        //     limit(1)
+        // )
+        // getDocs(q)
+        // .then(snapshot => {
+        //     console.log(snapshot.docs.map(doc => {
+        //                 return { ...doc.data(), id: doc.id }
+        //             } 
+        //         ))
+        // })
+        // .catch((error) => {
+        //     setShow(false)
+        //     console.log("error: ", error)
+        // })
+        // .finally(
+        //     setTimeout(() => {
+        //         setIsLoaded(true);
+        //     }, 800)
+        // );
+
+
+
+        // getItems(category)
+        // .then((response) => {
+        //     response ? setItems(response) : setShow(false)
+        // })
+        // .catch((error) => {
+        //     setShow(false)
+        //     console.log("error: ", error)
+        // })
+        // .finally(
+        //     setTimeout(() => {
+        //         setIsLoaded(true);
+        //     }, 800)
+        // );
     }, [category]);
 
 

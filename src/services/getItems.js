@@ -1,4 +1,5 @@
 import { ItemCounter } from "../components/atoms/Item/Counter";
+import { collection, getDocs, getFirestore, query, where, limit, doc, getDoc, orderBy  } from 'firebase/firestore'
 
 const data = [
     {
@@ -124,14 +125,67 @@ const data = [
     },
 ];
 
-const getItems = (category) => {
-    return new Promise((resolve,reject) => {
-            let items = data;
-            if(category){
-                items = data.filter(item => item.category.toLowerCase().indexOf(category.toLowerCase()) > -1)
-            }
-            resolve(items);
-    })
+
+// const getItems = (category) => {
+//     return new Promise((resolve,reject) => {
+//             let items = data;
+//             if(category){
+//                 items = data.filter(item => item.category.toLowerCase().indexOf(category.toLowerCase()) > -1)
+//             }
+//             resolve(items);
+//     })
+// }
+
+// const getItemStock = async (itemId) => {
+//     // return new Promise((resolve,reject) => {
+//     //     resolve(data.find( (item) => item.id === parseInt(itemId)).stock  );
+//     // })
+//     // let stock = await getItemDetail(itemId).then((response)=> response.stock);
+//     // console.log('getItemStock' , stock);
+//     //return  await 100;//getItemDetail(itemId).then((response)=> response.stock);
+
+//     let item = data.find( (item) => item.id === parseInt(itemId)) ;
+//     console.log(item.stock);
+//     return item.stock;
+// }
+
+
+
+
+// const getItemDetail = (itemId) => {
+//     return new Promise((resolve,reject) => {
+//         resolve(data.find( (item) => item.id === parseInt(itemId))    );
+//     })
+// }
+
+
+
+
+
+
+function getItems(category){
+
+    // const db = firebase.firestore();
+    // let query = db.collection('items')
+    //     .orderBy('orden', 'asc');
+
+
+    console.log('category' , category)
+
+    const dataFireBase = getFirestore();
+    let itemsCollection = collection(dataFireBase,'items')
+    itemsCollection = query(itemsCollection,
+        orderBy("orden", "asc")
+    )
+    const q =category && query(
+        // collection(dataFireBase,'items'),
+        itemsCollection,
+        where('category', '==', category)
+    )
+    
+    
+    return getDocs(q || itemsCollection)
+
 }
 
 const getItemStock = async (itemId) => {
@@ -147,12 +201,17 @@ const getItemStock = async (itemId) => {
     return item.stock;
 }
 
-
-
-
 const getItemDetail = (itemId) => {
-    return new Promise((resolve,reject) => {
-        resolve(data.find( (item) => item.id === parseInt(itemId))    );
-    })
+    const dataFireBase = getFirestore();
+    const itemRef = doc(dataFireBase,'items',itemId);
+    // console.log('getDoc',(itemRef))
+    return getDoc(itemRef);
+
 }
+
+// const getItemDetail = (itemId) => {
+//     return new Promise((resolve,reject) => {
+//         resolve(data.find( (item) => item.id === parseInt(itemId))    );
+//     })
+// }
 export { getItems, getItemDetail, getItemStock };
