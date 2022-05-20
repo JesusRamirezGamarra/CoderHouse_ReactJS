@@ -5,6 +5,8 @@ import { Loading } from "../../components/atoms/loading"
 import { Page404 } from "../../pages/error/page404"
 import { getItems } from '../../services/getItems'
 import { ItemList } from '../../components/molecules/ItemList'
+import { SideBarCart } from "../../components/atoms/SideBarCart";
+
 
 import { CartContext } from "../../context/CartContext";
 
@@ -91,13 +93,22 @@ return (
             {isLoaded ? (
                     <div>
                         {show ? 
-                                        <>      
-                                            <ItemList items={items} /> 
-                                            {cart.length > 0 && (
-                                                <div >
-                                                    SideBarCart 
+                                        <>  
+                                            <div className="row">
+                                                <div className="col-lg-1">                                            
                                                 </div>
-                                            )}
+                                                <div className="col-lg-9">                                            
+                                                    <ItemList items={items} /> 
+                                                </div>
+                                                <div className="col-lg-2">                                            
+                                                    {cart.length > 0 && (
+                                                        <div className="hidden lg:block absolute right-0  h-screen w-[15%] overflow-hidden mt-64 pr-[1%]">
+                                                            SideBarCart  
+                                                            <SideBarCart products={items} />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
                                         </>
                                     : <Page404 />
                         }                       
@@ -108,3 +119,4 @@ return (
 }
 
 export {ItemListContainer}
+

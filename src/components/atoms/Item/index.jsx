@@ -61,9 +61,9 @@ const Item  = ( item ) => {
 
                     
                 </div>
-                <Link to={`/store/detail/${id}`}> 
-                                        <button className="btn btn-dark">Ver Mas</button>
-                                    </Link>                
+                    <Link to={`/store/detail/${id}`}> 
+                        <button className="btn btn-dark">Ver Mas</button>
+                    </Link>                
                 {/* <button className="btn btn-dark" onClick={onMoreDetails}>Ver Descripcion producto { show ? '-': '+'} </button> */}
                 <div>
                 {add ? 

@@ -30,7 +30,7 @@ return (
             className={`relative z-40 flex flex-row justify-between items-center ${effect}`}
         >
             {cart.length > 0 && (
-            <h4 className="absolute bg-[#ffd050] rounded-full px-[10px] right-[-20px] text-[30px] translate-y-[15px]">
+            <h4 className="absolute bg-[#ffd050] rounded-full px-[10px] right-[-20px] text-[30px] translate-y-[-20px]">
                 {cart.map((item) => item.count).reduce((pv, cv) => pv + cv, 0)}
             </h4>
             )}
@@ -41,7 +41,7 @@ return (
             >
             <span className="sr-only">View Shopping Cart</span>
             <ShoppingCartIcon
-                className="h-12 w-12 stroke-white "
+                className="h-10 w-10 stroke-white "
                 aria-hidden="true"
             />
             </button>

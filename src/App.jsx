@@ -5,11 +5,13 @@ import NavBar from './components/atoms/NavBar'
 import { BannerContainer } from "./containers/BannerContainer";
 import { ItemListContainer } from './containers/ItemListContainer';
 import { ItemDetailContainer } from './containers/ItemDetailContainer';
+import { Footer } from './components/atoms/Footer';
 
 import { Page404 } from "./pages/error/page404";
 import { Home } from './pages/home';
 import { Cart } from './pages/cart';
 import { Payment } from './pages/payment';
+
 
 
 import { CartContextProvider } from "./context/CartContext";
@@ -24,7 +26,8 @@ export function App() {
     return (
         <>
             <CartContextProvider>
-                <div className="App">
+                {/* <div className="App"> */}
+                <div className="App min-h-screen flex flex-col ">                    
                 <BrowserRouter>      
                     <BannerContainer />
                     <header>
@@ -40,6 +43,7 @@ export function App() {
                         <Route path="/store/:category" element={<ItemListContainer/>}  /> 
                         <Route path="/store/detail/:itemId" element={<ItemDetailContainer/>}  /> 
                     </Routes>                
+                <Footer />
                 </BrowserRouter>                
                 </div>
             </CartContextProvider>
