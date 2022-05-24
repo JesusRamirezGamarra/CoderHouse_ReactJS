@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import { swalSuccess,swalWarning,swalEmpty,swalDeleteSucces,} from "../helpers/swalModals";
+import { getDBProductStock } from "../helpers/DBget";
 import { useState } from "react";
 export const CartContext = createContext();
 
@@ -33,7 +34,8 @@ export const CartContextProvider = ({ children }) => {
 
     const limitStock = async ({ id, count }) => {
         const countInCart = cart.filter((item) => item.id === id)[0].count;
-        let stock = 10
+        // let stock = 10
+        let stock = getDBProductStock(id);
         return countInCart + count <= stock  || swalWarning();
     };
 

@@ -11,7 +11,7 @@ import { Page404 } from "./pages/error/page404";
 import { Home } from './pages/home';
 import { Cart } from './pages/cart';
 import { Payment } from './pages/payment';
-
+import { AboutUS } from './pages/nosotros';
 
 
 import { CartContextProvider } from "./context/CartContext";
@@ -39,6 +39,7 @@ export function App() {
                         <Route path="/cart" element={<Cart/>}  /> 
                         <Route path="/" element={<Home/>}  /> 
                         <Route path="/home" element={<Home/>}  /> 
+                        <Route path="/AboutUS" element={<AboutUS/>}  /> 
                         <Route path="/store" element={<ItemListContainer/>}  /> 
                         <Route path="/store/:category" element={<ItemListContainer/>}  /> 
                         <Route path="/store/detail/:itemId" element={<ItemDetailContainer/>}  /> 
