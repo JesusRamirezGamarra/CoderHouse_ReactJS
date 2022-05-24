@@ -27,10 +27,10 @@ return (
                         <Link className="nav-link" to='/' >Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">About US</Link>
+                        <Link className="nav-link" to="/nosotros">About US</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/Store">Store</Link>
+                        <Link className="nav-link" to="/store">Store</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/">Ofertas</Link>
@@ -38,7 +38,7 @@ return (
                 </ul>
                 <form className="d-flex">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={event => setInputSearch(event.target.value)}   />
-                    <Link className="btn btn-outline-success-poke" to={`/Store/${inputSearch}`}>Store</Link>
+                    <Link className="btn btn-outline-success-poke" to={`/store/${inputSearch}`}>Store</Link>
                 </form>
             </div>
             {/* <Link className="navbar-brand  mx-auto" to="/Store"> */}

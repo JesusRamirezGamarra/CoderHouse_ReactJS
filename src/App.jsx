@@ -39,7 +39,7 @@ export function App() {
                         <Route path="/cart" element={<Cart/>}  /> 
                         <Route path="/" element={<Home/>}  /> 
                         <Route path="/home" element={<Home/>}  /> 
-                        <Route path="/AboutUS" element={<AboutUS/>}  /> 
+                        <Route path="/nosotros" element={<AboutUS/>}  /> 
                         <Route path="/store" element={<ItemListContainer/>}  /> 
                         <Route path="/store/:category" element={<ItemListContainer/>}  /> 
                         <Route path="/store/detail/:itemId" element={<ItemDetailContainer/>}  /> 

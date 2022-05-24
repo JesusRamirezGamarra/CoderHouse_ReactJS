@@ -48,7 +48,7 @@ const Home = () => {
                         </div>
                         <div >
                             <Link
-                                to="/AboutUS"
+                                to="/nosotros"
                                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-red-rug-900 bg-red-rug-500 hover:bg-red-rug-400 md:py-4 md:text-lg md:px-10"
                             >
                                 Nosotros
