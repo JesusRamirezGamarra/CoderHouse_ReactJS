@@ -2,7 +2,7 @@
   "name": "coderhouse_reactjs",
   "version": "1.0.1",
   "private": true,
-  "homepage": "http://jesusramirezgamarra.github.io/CoderHouse_ReactJS",
+  "homepage": "https://jesusramirezgamarra.github.io/CoderHouse_ReactJS",
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.16.4",
