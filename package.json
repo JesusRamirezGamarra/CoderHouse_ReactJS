@@ -1,7 +1,8 @@
 {
   "name": "coderhouse_reactjs",
-  "version": "0.1.1",
+  "version": "1.0.1",
   "private": true,
+  "homepage": "http://jesusramirezgamarra.github.io/CoderHouse_ReactJS",
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.16.4",
@@ -10,6 +11,7 @@
     "classnames": "^2.3.1",
     "firebase": "^9.8.1",
     "formik": "^2.2.9",
+    "gh-pages": "^4.0.0",
     "heroicons-react": "^1.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -20,6 +22,8 @@
     "sweetalert2": "^11.4.13"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
