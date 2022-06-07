@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/CoderHouse_ReactJS/static/css/main.79be91c9.css",
+    "main.js": "/CoderHouse_ReactJS/static/js/main.1509bc94.js",
+    "static/media/Home.png": "/CoderHouse_ReactJS/static/media/Home.5881065785849f6ac99b.png",
+    "static/media/AboutUS.png": "/CoderHouse_ReactJS/static/media/AboutUS.b2faef1dc753bdb03e56.png",
+    "static/media/page404.png": "/CoderHouse_ReactJS/static/media/page404.71e1f7f1b3a2ee7d96cd.png",
+    "index.html": "/CoderHouse_ReactJS/index.html",
+    "main.79be91c9.css.map": "/CoderHouse_ReactJS/static/css/main.79be91c9.css.map",
+    "main.1509bc94.js.map": "/CoderHouse_ReactJS/static/js/main.1509bc94.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79be91c9.css",
+    "static/js/main.1509bc94.js"
+  ]
+}
