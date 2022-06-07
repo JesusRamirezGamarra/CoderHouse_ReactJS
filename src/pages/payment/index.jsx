@@ -50,11 +50,6 @@ const Payment = () => {
         {cart.length > 0 ? (
             <>
             <div className=" hidden sm:flex mt-10 h-40 bg-[#febe14] w-[65%] m-auto overflow-hidden flex flex-col content-center justify-center rounded-md ">
-                <img
-                className="object-fill w-full box-border p-6 translate-y-2"
-                src="https://i.imgur.com/0iTaY55.gif"
-                alt=""
-                />
             </div>
             <div className="flex flex-row flex-wrap justify-center w-full mx-auto min-w-screen min-h-screen px-[15%] sm:p-6 p-12">
                 <div className="flex flex-1 flex-col flex items-start p-[4%] max-w-[750px] min-w-[320px] md:flex-none md:min-w-[35%]">
