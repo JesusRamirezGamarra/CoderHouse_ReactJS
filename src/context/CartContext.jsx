@@ -24,6 +24,7 @@ export const CartContextProvider = ({ children }) => {
 
     const addToExistingProd = ({ id, count, title }) => {
         const existingMatch = cart.filter((item) => item.id === id);
+        console.log('existingMatch',existingMatch);
         existingMatch[0].count += count;
         let index = cart.indexOf(existingMatch);
         if (index !== -1) cart[index] = existingMatch[0];
@@ -34,9 +35,8 @@ export const CartContextProvider = ({ children }) => {
 
     const limitStock = async ({ id, count }) => {
         const countInCart = cart.filter((item) => item.id === id)[0].count;
-        // let stock = 10
         let stock = getDBProductStock(id);
-        return countInCart + count <= stock  || swalWarning();
+        return countInCart + count <=  (await stock)  || swalWarning();
     };
 
     const clearCart = () => {

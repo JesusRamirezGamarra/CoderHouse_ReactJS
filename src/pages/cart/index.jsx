@@ -2,7 +2,7 @@ import React from "react";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-// import './index.css';
+
 import { TrashIcon, ShoppingCartIcon } from "@heroicons/react/outline";
 import { ArrowNarrowLeft } from "heroicons-react";
 

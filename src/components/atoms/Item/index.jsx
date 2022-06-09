@@ -16,25 +16,18 @@ const Item  = ( item ) => {
     const productItem = { id, image, title,price,count,stock,description,descriptionLong,etimology,category,Promoprice };
 
     const pushToCart = async (quantityToAdd) => {
-        console.log('pushToCart',quantityToAdd )
         if (!isProductInCart(id)) addToCart(productItem);
         if (isProductInCart(id) && (await limitStock(productItem)))
             addToExistingProd(productItem);
     };
 
-
     const onMoreDetails = () =>{
-        console.log(`OnMoreDetails : ${show}`)
         setShow(!show)
     }
 
-
     const onAdd = (quantityToAdd) =>{
-        console.log('Agrege al Carrito',quantityToAdd )
-        console.log(add)
         setAdd(true)
     }
-
         
     return (
         <>
@@ -51,20 +44,11 @@ const Item  = ( item ) => {
                         <img className="card-img-top" src={image===undefined?defaultImage:image} alt={title} />
                     </Link>
                     <p className="card-text">{description}</p>
-                    {/* { show &&   <div>
-                                    <p className="card-text">{description}</p> */}
-                                    {/* <Link to={`/store/detail/${id}`}> 
-                                        <button className="btn btn-dark">Ver Mas</button>
-                                    </Link> */}
-                                {/* </div>  */}
-                    {/* } */}
-
                     
                 </div>
                     <Link to={`/store/detail/${id}`}> 
                         <button className="btn btn-dark">Ver Mas</button>
                     </Link>                
-                {/* <button className="btn btn-dark" onClick={onMoreDetails}>Ver Descripcion producto { show ? '-': '+'} </button> */}
                 <div>
                 {add ? 
                     <p>"Producto Agregado"</p>

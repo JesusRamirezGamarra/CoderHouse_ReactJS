@@ -22,6 +22,7 @@ export const getDBProduct = async (id) => {
   const q = doc(db, "items", id);
   const response = await getDoc(q);
   const data = { id: response.id, ...response.data() };
+  console.log('data',data);
   return data;
 };
 export const getDBProductStock = async (id) => {
@@ -44,5 +45,6 @@ export const getDBCategory = async (category) => {
 export const getProductStock = async (id) => {
   const data = await getDBProduct(id);
   const prodStock = data.stock;
+  console.log('prodStock',prodStock);
   return prodStock;
 };

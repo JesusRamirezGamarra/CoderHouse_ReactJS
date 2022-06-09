@@ -24,10 +24,6 @@ const ItemListContainer = () => {
     useEffect(() => {
         getItems(category)
         .then(snapshot => {
-            // console.log(snapshot.docs.map(doc => {
-            //             return { ...doc.data(), id: doc.id }
-            //         } 
-            //     ))
             setItems(snapshot.docs.map(doc => {
                 return { ...doc.data(), id: doc.id }
                 }))
@@ -44,47 +40,6 @@ const ItemListContainer = () => {
                 setIsLoaded(true);
             }, 800)
         );
-
-
-        // const db = getFirestore();
-        // const itemsCollection = collection(db, 'items');
-        // const q = query(
-        //     itemsCollection,
-        //     where('price', '<=', 120),
-        //     limit(1)
-        // )
-        // getDocs(q)
-        // .then(snapshot => {
-        //     console.log(snapshot.docs.map(doc => {
-        //                 return { ...doc.data(), id: doc.id }
-        //             } 
-        //         ))
-        // })
-        // .catch((error) => {
-        //     setShow(false)
-        //     console.log("error: ", error)
-        // })
-        // .finally(
-        //     setTimeout(() => {
-        //         setIsLoaded(true);
-        //     }, 800)
-        // );
-
-
-
-        // getItems(category)
-        // .then((response) => {
-        //     response ? setItems(response) : setShow(false)
-        // })
-        // .catch((error) => {
-        //     setShow(false)
-        //     console.log("error: ", error)
-        // })
-        // .finally(
-        //     setTimeout(() => {
-        //         setIsLoaded(true);
-        //     }, 800)
-        // );
     }, [category]);
 
 
@@ -93,24 +48,23 @@ return (
             {isLoaded ? (
                     <div>
                         {show ? 
-                                        <>  
-                                            <div className="row">
-                                                <div className="col-lg-1">                                            
+                                <>  
+                                    <div className="row">
+                                        <div className="col-lg-1">                                            
+                                        </div>
+                                        <div className="col-lg-9">                                            
+                                            <ItemList items={items} /> 
+                                        </div>
+                                        <div className="col-lg-2">                                            
+                                            {cart.length > 0 && (
+                                                <div > 
+                                                    <SideBarCart products={items} />
                                                 </div>
-                                                <div className="col-lg-9">                                            
-                                                    <ItemList items={items} /> 
-                                                </div>
-                                                <div className="col-lg-2">                                            
-                                                    {cart.length > 0 && (
-                                                        <div className="hidden lg:block absolute right-0  h-screen w-[15%] overflow-hidden mt-64 pr-[1%]">
-                                                            SideBarCart  
-                                                            <SideBarCart products={items} />
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </>
-                                    : <Page404 />
+                                            )}
+                                        </div>
+                                    </div>
+                                </>
+                            : <Page404 />
                         }                       
                     </div>
             ) : ( <Loading /> )}  

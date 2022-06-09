@@ -4,42 +4,16 @@ import { getItemStock } from "../../../../services/getItems";
 
 
 const ItemCounter = ({id, addToCart , count , setCount , stock }) => {
-    // const [count,setCount] = useState(minUnidadPorPedido)
-    //let stock = 10;//getItemStock(id);
-    // let stock = getItemStock(id)
-    //  const [ stock, setStock] = useState(0);
-
-    // useEffect(() => {
-    //     getItemStock(id)
-    //     .then((response) => {
-    //         console.log('response',response)
-    //         // setStock(response);
-    //     })
-    //     .catch((error) => console.log("error: ", error))
-    //     // .finally(
-    //     //     setTimeout(() => {
-    //     //         setIsLoaded(true);
-    //     //     }, 800)
-    //     // );
-    // }, 0);
-
-    
-
 
     const onIncrease = async() =>{
-        
         if(count <  stock){
             setCount(count + 1)
-            console.log('stock Transaction: ',stock)
-            console.log('Unidades Solicitadas: ',count + 1 )
         }
     }
 
     const onDecrease = async() =>{
         if( count >1){
             setCount(count - 1)
-            console.log('stock Transaction: ',stock)
-            console.log('Unidades Solicitadas: ', count - 1)            
         }
     }
 
